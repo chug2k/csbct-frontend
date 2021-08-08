@@ -1,11 +1,19 @@
 import React from "react";
+import Footer from "../components/Footer/Footer";
+import Header from "../components/Header/Header";
+import Introduction from "../components/Introduction/Introduction";
+import Story from "../components/Story/Story";
 
-
+import Card from "../components/Card/Card";
 
 const HomePage = () => {
   return (
     <div>
-      <h1> Home Page Goes Here </h1>
+      <Header />
+      <Introduction />
+      <Card />
+      <Story />
+      <Footer />
     </div>
   );
 };

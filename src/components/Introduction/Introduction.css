@@ -1,0 +1,18 @@
+.container {
+  display: flex;
+  justify-content: space-between;
+}
+
+.leftside {
+  justify-content: space-between;
+  align-items: center;
+}
+
+.rightside {
+  justify-content: space-between;
+  align-items: center;
+}
+
+.container {
+  background-color: #ef8172;
+}
