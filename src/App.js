@@ -1,4 +1,5 @@
 import "bootstrap/dist/css/bootstrap.min.css";
+import "swiper/swiper-bundle.css";
 import "./App.css";
 
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
