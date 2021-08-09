@@ -1,5 +1,6 @@
 import "bootstrap/dist/css/bootstrap.min.css";
 import "swiper/swiper-bundle.css";
+import "stream-chat-react/dist/css/index.css";
 import "./App.css";
 
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";

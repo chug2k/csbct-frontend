@@ -1,5 +1,5 @@
 import React from "react";
-import Card from "../ReceiverCard/ReceiverCard";
+import ReceiverCard from "../ReceiverCard/ReceiverCard";
 import SwiperCore, { Navigation, Pagination, Scrollbar, A11y } from "swiper";
 import { Container } from "react-bootstrap";
 import { Swiper, SwiperSlide } from "swiper/react";
@@ -11,7 +11,7 @@ const ReceiversCarousel = ({ items }) => {
       <Swiper spaceBetween={50} slidesPerView={4} navigation>
         {items.map((i) => (
           <SwiperSlide>
-            <Card {...i} />
+            <ReceiverCard {...i} />
           </SwiperSlide>
         ))}
       </Swiper>
