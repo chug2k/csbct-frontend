@@ -14,11 +14,12 @@ import { toastFail, toastSuccess } from "../../redux/Toast/ToastAction";
 import "./Style.css";
 import NumberFormat from "react-number-format";
 import Imgupload from "../Imgupload/Imgupload";
+import { DonationAction } from "../../redux/Giverdonations/DonationAction";
 
 function ReceiverBankAccount() {
   const dispatch = useDispatch();
   const [state, setState] = useState({
-    donation: "",
+    amount: "",
     name: "",
     email: "",
     Message: "",
@@ -27,11 +28,7 @@ function ReceiverBankAccount() {
   let a;
   const handleOnclick = (e) => {
     e.preventDefault();
-    if (state.donation >= 10000) {
-      dispatch(toastSuccess(state));
-    } else {
-      dispatch(toastFail(state));
-    }
+    dispatch(DonationAction(state));
   };
   console.log("checkstate", state);
   return (
@@ -77,7 +74,8 @@ function ReceiverBankAccount() {
                       placeholder="e.g: 300.000 VND"
                       onChange={(e) => {
                         a = parseFloat(e.target.value.replace(/\VND|,/g, ""));
-                        setState({ ...state, donation: a });
+                        setState({ ...state, amount: a });
+                        e.preventDefault();
                       }}
                     />
                   </Col>
@@ -91,7 +89,10 @@ function ReceiverBankAccount() {
                   className="formControl"
                   placeholder="e.g:Minak Mingu"
                   aria-label="Recipient's username"
-                  onChange={(e) => setState({ ...state, name: e.target.value })}
+                  onChange={(e) => {
+                    e.preventDefault();
+                    setState({ ...state, name: e.target.value });
+                  }}
                 />
               </InputGroup>
             </div>
@@ -143,7 +144,7 @@ function ReceiverBankAccount() {
             the receiver account
           </div>
           <div className="verificationButtons">
-            <Imgupload className="rightButton" />
+            {/* <Imgupload className="rightButton" /> */}
             <Button
               variant=""
               className="btn-primary-t leftButton"

@@ -4,12 +4,12 @@ import { useSelector } from "react-redux";
 
 function ToastSoS() {
   const toastState = useSelector((state) => state.toast);
-
+  console.log("check", toastState);
   return toastState.loading ? (
     <Spinner animation="border" variant="primary" />
-  ) : toastState.error ? (
+  ) : toastState.state.mode === "" ? (
     <div>
-      <center>
+      {/* <center>
         <div className="bg-danger ">
           <div className="bg-danger  ">
             <img
@@ -18,14 +18,14 @@ function ToastSoS() {
               alt=""
             />
             <strong className="me-auto text-white">
-              Donation is at least 10000VND !
+              Donation is have to fill in!
             </strong>
           </div>
           <div className="text-white">Please input again</div>
         </div>
-      </center>
+      </center> */}
     </div>
-  ) : toastState.state.donation ? (
+  ) : toastState.state.amount ? (
     <div>
       <center>
         <div className="bg-success ">
@@ -46,7 +46,23 @@ function ToastSoS() {
       </center>
     </div>
   ) : (
-    <h1></h1>
+    <div>
+      {/* <center>
+        <div className="bg-danger ">
+          <div className="bg-danger  ">
+            <img
+              src="holder.js/20x20?text=%20"
+              className="rounded me-2"
+              alt=""
+            />
+            <strong className="me-auto text-white">
+              Donation is have to fill in!
+            </strong>
+          </div>
+          <div className="text-white">Please input again</div>
+        </div>
+      </center> */}
+    </div>
   );
 }
 
