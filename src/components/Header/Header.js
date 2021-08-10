@@ -53,6 +53,7 @@ const Header = () => {
           <Nav.Link href="#aboutus">About us</Nav.Link>
           <Nav.Link href="#successstories">Success stories</Nav.Link>
           <Nav.Link href="./Banktransfer">Donate</Nav.Link>
+          <Nav.Link href="./requests">Requests</Nav.Link>
         </Nav>
         <div className=" justify-content-md-center">
           <Nav className="mr-auto justify-content-end">
