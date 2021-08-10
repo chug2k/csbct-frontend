@@ -7,7 +7,7 @@ const Introduction = () => {
     <Container>
       <div className="py-5 ">
         <div className="container px-5">
-          <h1 className="fw-bolder fs-5 mb-4">Our Company</h1>
+          {/* <h1 className="fw-bolder fs-5 mb-4">Our Company</h1> */}
           <div className="card border-0  rounded-3 overflow-hidden">
             <div className="card-body p-0">
               <div className="row gx-0">
@@ -18,19 +18,17 @@ const Introduction = () => {
                     </div>
                     <div className="h2 fw-bolder">Caring is sharing</div>
                     <p>
-                      C's BCT is a charity app which allows users to directly
-                      donate money, food, clothes and other things to people in
-                      need. Everyone can sign up to be a donor and help people
-                      in need today!
+                      EZ-Donate is a charity app which allows users to donate
+                      quickly to people in need.
                     </p>
 
-                    <a
+                    {/* <a
                       className="stretched-link text-decoration-none"
                       href="#!"
                     >
                       Read more
                       <i className="bi bi-arrow-right"></i>
-                    </a>
+                    </a> */}
                   </div>
                 </div>
                 <div className="col-lg-6 col-xl-7 box-test">
