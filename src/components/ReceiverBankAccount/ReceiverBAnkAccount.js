@@ -13,6 +13,7 @@ import { useDispatch } from "react-redux";
 import { toastFail, toastSuccess } from "../../redux/Toast/ToastAction";
 import "./Style.css";
 import NumberFormat from "react-number-format";
+import Imgupload from "../Imgupload/Imgupload";
 
 function ReceiverBankAccount() {
   const dispatch = useDispatch();
@@ -141,9 +142,16 @@ function ReceiverBankAccount() {
             Please confirm that you have successfully transferred the money to
             the receiver account
           </div>
-          <Button variant="" className="btn-primary-t" onClick={handleOnclick}>
-            Transferred
-          </Button>
+          <div className="verificationButtons">
+            <Imgupload className="rightButton" />
+            <Button
+              variant=""
+              className="btn-primary-t leftButton"
+              onClick={handleOnclick}
+            >
+              Transferred
+            </Button>{" "}
+          </div>
         </Col>
       </Row>
     </Container>
