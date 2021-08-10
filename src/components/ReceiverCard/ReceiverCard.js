@@ -1,6 +1,6 @@
 import React from "react";
 import "./ReceiverCard.css";
-import { Card } from "react-bootstrap";
+import { Card, CardGroup, Col, Row } from "react-bootstrap";
 
 const ReceiverCard = ({
   imgURL,
@@ -11,18 +11,44 @@ const ReceiverCard = ({
   details,
 }) => {
   return (
-    <Card>
-      <Card.Img variant="top" src={imgURL} />
-      <Card.Body>
-        <Card.Title>{name}</Card.Title>
-        <Card.Subtitle className="mb-2 text-muted">{need}</Card.Subtitle>
-        <Card.Text>
-          <p>Location: {location}</p>
-          <p>Requesting for: {requestingFor}</p>
-          <p className="small">Details: {details}</p>
-        </Card.Text>
-      </Card.Body>
-    </Card>
+    <>
+      <CardGroup>
+        <Row className="card-space">
+          <Col xs={12} md={3} lg={4}>
+            <Card
+              style={{
+                width: "16rem",
+              }}
+            >
+              <Card.Img
+                variant="top"
+                src={imgURL}
+                style={{
+                  width: "16rem",
+                  height: "45vh",
+                  backgroundPosition: "center",
+                }}
+              />
+              <Card.Body>
+                <Card.Title>Requesting for {requestingFor}</Card.Title>
+                <Card.Subtitle className="mb-2 text-muted">
+                  {need} VND
+                </Card.Subtitle>
+                <Card.Text>
+                  <div>
+                    <p>Location: {location}</p>
+                    <p>{name}</p>
+                    <a href="" style={{ color: "grey" }}>
+                      Read more
+                    </a>
+                  </div>
+                </Card.Text>
+              </Card.Body>
+            </Card>
+          </Col>
+        </Row>
+      </CardGroup>
+    </>
   );
 };
 
