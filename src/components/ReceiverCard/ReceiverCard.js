@@ -2,7 +2,6 @@ import React from "react";
 import "./ReceiverCard.css";
 import { Card, CardGroup, Col, ProgressBar, Row } from "react-bootstrap";
 
-
 const ReceiverCard = ({
   imgURL,
   name,
@@ -32,7 +31,7 @@ const ReceiverCard = ({
                 }}
               />
               <Card.Body>
-                <Card.Title>Requesting for {requestingFor}</Card.Title>
+                <Card.Title>For: {requestingFor}</Card.Title>
                 <Card.Subtitle className="mb-2 text-muted">
                   {need} VND
                 </Card.Subtitle>
