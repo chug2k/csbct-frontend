@@ -2,6 +2,7 @@ import React from "react";
 import "./ReceiverCard.css";
 import { Card, CardGroup, Col, Row } from "react-bootstrap";
 
+
 const ReceiverCard = ({
   imgURL,
   name,
