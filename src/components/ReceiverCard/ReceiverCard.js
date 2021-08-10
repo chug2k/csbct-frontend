@@ -1,7 +1,11 @@
 import React from "react";
+import { Button } from "react-bootstrap";
+import { Link } from "react-router-dom";
+
 import "./ReceiverCard.css";
 
 const ReceiverCard = ({
+  id,
   imgURL,
   name,
   location,
@@ -24,9 +28,7 @@ const ReceiverCard = ({
             <div class="badge bg-primary bg-gradient rounded-pill mb-2 align-items">
               {location}
             </div>
-            <a class="text-decoration-none link-dark stretched-link" href="#!">
-              <div class="h5 card-title mb-3">{name}</div>
-            </a>
+            <div class="h5 card-title mb-3">{name}</div>
             <div class="h6 card-title mb-3">Requests: {need}VND</div>
             <p class="card-text mb-0">{details}</p>
           </div>
@@ -39,6 +41,9 @@ const ReceiverCard = ({
                 </div>
               </div>
             </div>
+            <Link to={`/requests/${id}`}>
+              <Button>See More</Button>
+            </Link>
           </div>
         </div>
       </div>
