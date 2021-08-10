@@ -8,6 +8,8 @@ import HomePage from "./pages/HomePage";
 import DetailPage from "./pages/DetailPage";
 
 import BankTransfer from "./pages/BankTransfer/BankTranfer";
+import LogInPage from "./pages/LogInPage";
+import SignUpPage from "./pages/SignUp/SignUpPage";
 
 function App() {
   return (
@@ -15,6 +17,8 @@ function App() {
       <Router>
         <Switch>
           <Route exact path="/" component={HomePage} />
+          <Route exact path="/login" component={LogInPage} />
+          <Route exact path="/signup" component={SignUpPage} />
           <Route exact path="/requests/:id" component={DetailPage} />
           <Route exact path="/Banktransfer" component={BankTransfer} />
         </Switch>
