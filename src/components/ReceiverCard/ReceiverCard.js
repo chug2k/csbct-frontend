@@ -3,6 +3,7 @@ import { Button } from "react-bootstrap";
 import { Link } from "react-router-dom";
 
 import "./ReceiverCard.css";
+import { Card, CardGroup, Col, ProgressBar, Row } from "react-bootstrap";
 
 const ReceiverCard = ({
   id,
@@ -14,40 +15,46 @@ const ReceiverCard = ({
   details,
 }) => {
   return (
-    <div class="row gx-5">
-      <div class="col-lg-4 mb-5 h-100">
-        <div class="card h-100 shadow border-0">
-          <img
-            class="card-img-top"
-            src={imgURL}
-            alt="..."
-            height="300px"
-            width="250px"
-          />
-          <div class="card-body p-4 h-100">
-            <div class="badge bg-primary bg-gradient rounded-pill mb-2 align-items">
-              {location}
-            </div>
-            <div class="h5 card-title mb-3">{name}</div>
-            <div class="h6 card-title mb-3">Requests: {need}VND</div>
-            <p class="card-text mb-0">{details}</p>
-          </div>
-          <div class="card-footer p-4 pt-0 bg-transparent border-top-0">
-            <div class="d-flex align-items-end justify-content-between">
-              <div class="d-flex align-items-center">
-                <div class="small">
-                  <div class="fw-bold">Needed for: {requestingFor}</div>
-                  <div class="text-muted">Date posted: March 12, 2021</div>
-                </div>
-              </div>
-            </div>
-            <Link to={`/requests/${id}`}>
-              <Button>See More</Button>
-            </Link>
-          </div>
-        </div>
-      </div>
-    </div>
+    <>
+      <CardGroup>
+        <Row className="card-space ">
+          <Col xs={12} md={3} lg={4}>
+            <Card
+              style={{
+                width: "16rem",
+                marginBottom: "20px",
+              }}
+            >
+              <Card.Img
+                variant="top"
+                src={imgURL}
+                style={{
+                  width: "100%",
+                  height: "10rem",
+                  backgroundPosition: "center",
+                }}
+              />
+              <Card.Body>
+                <Card.Title>For: {requestingFor}</Card.Title>
+                <Card.Subtitle className="mb-2 text-muted">
+                  {need} VND
+                </Card.Subtitle>
+                <Card.Text>
+                  <div>
+                    <p>Location: {location}</p>
+                    <p>{name}</p>
+                    <a href="" style={{ color: "grey" }}>
+                      Read more
+                    </a>
+                  </div>
+                </Card.Text>
+              </Card.Body>
+              <ProgressBar variant="success" now={40} />
+            </Card>
+          </Col>
+        </Row>
+      </CardGroup>
+    </>
   );
 };
 

@@ -1,14 +1,17 @@
 import React from "react";
 import { Nav, Navbar } from "react-bootstrap";
 import { Link } from "react-router-dom";
-import SearchBar from "./SearchBar";
 import "./styles.css";
 
 import logo from "./logo.png";
 
 const Header = () => {
   return (
-    <Navbar className="nav-bar" variant="dark" expand="lg">
+    <Navbar
+      className="nav-bar justify-content-md-center "
+      variant="dark"
+      expand="lg"
+    >
       <Link style={{ textDecoration: "none" }} as={Link} to={`/`}>
         <Navbar.Brand>
           <img
@@ -23,17 +26,17 @@ const Header = () => {
       </Link>
       <Navbar.Toggle aria-controls="basic-navbar-nav" />
       <Navbar.Collapse id="basic-navbar-nav">
-        <Nav className="mr-auto">
+        <Nav className="mr-auto ">
           <Nav.Link href="#aboutus">About us</Nav.Link>
           <Nav.Link href="#successstories">Success stories</Nav.Link>
-          <Nav.Link href="#howtodonate">How to Donate</Nav.Link>
+          <Nav.Link href="./Banktransfer">Donate</Nav.Link>
         </Nav>
-        <Nav className="mr-auto toprigh">
-          <SearchBar className="searchBar" />
-
-          <Nav.Link href="#login">LogIn</Nav.Link>
-          <Nav.Link href="#register">Sign up</Nav.Link>
-        </Nav>
+        <div className=" justify-content-md-center">
+          <Nav className="mr-auto justify-content-end">
+            <Nav.Link href="#login">LogIn</Nav.Link>
+            <Nav.Link href="#register">Sign up</Nav.Link>
+          </Nav>
+        </div>
       </Navbar.Collapse>
     </Navbar>
   );

@@ -7,15 +7,22 @@ import ReceiversCarousel from "../components/ReceiversCarousel/ReceiversCarousel
 
 import receiver from "../data";
 import CarouselMainPage from "../components/CarouselMainPage/CarouselMainPage";
+import Carousel2 from "../components/CarouselMainPage/Carousel2";
 
 const HomePage = () => {
   return (
     <div>
       <Header />
-      <CarouselMainPage />
-      {/* <Introduction /> */}
-      <ReceiversCarousel items={receiver} />
-      {/* <Story /> */}
+      <Carousel2 />
+      <Introduction />
+      <br />
+      <center>
+        <ReceiversCarousel items={receiver} />
+      </center>
+      <Story />
+      <center>
+        <ReceiversCarousel items={receiver} />
+      </center>
       <Footer />
     </div>
   );
