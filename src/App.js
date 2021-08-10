@@ -5,6 +5,7 @@ import "./App.css";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 
 import HomePage from "./pages/HomePage";
+import BankTransfer from "./pages/BankTransfer/BankTranfer";
 
 function App() {
   return (
@@ -12,6 +13,7 @@ function App() {
       <Router>
         <Switch>
           <Route exact path="/" component={HomePage} />
+          <Route exact path="/Banktransfer" component={BankTransfer} />
         </Switch>
       </Router>
     </div>

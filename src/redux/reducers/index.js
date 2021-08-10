@@ -1,6 +1,8 @@
 import { combineReducers } from "redux";
-
+import ToastReducer from "../Toast/ToastReducer";
 
 export default combineReducers({
-    // TODO: add reducers in here
-}); 
+  toast: ToastReducer,
+
+  // TODO: add reducers in here
+});
