@@ -6,8 +6,8 @@ import "./Style2.css";
 function CarouselMainPage() {
   const isSmall = useMediaQuery("(max-width: 576px)");
   const isMedium = useMediaQuery("(min-width:576px) and (max-width:768px)");
-  // const isLarge = useMediaQuery("(max-width:992px)");
-
+  const isLarge = useMediaQuery("(max-width:992px)");
+  const url = "";
   return (
     <div
       className="bg-pink  py-5  "
@@ -21,7 +21,7 @@ function CarouselMainPage() {
       <div className="container px-5">
         <div className="row gx-5 align-items-center justify-content-center">
           <div
-            className="col-lg-8 col-xl-7 col-xxl-6"
+            className="col-md-8 col-lg-7 col-xl-6"
             style={{
               paddingTop: isSmall ? "0vh" : "30vh",
             }}
@@ -34,7 +34,7 @@ function CarouselMainPage() {
               Read more
             </a>
           </div>
-          <div className="col-xl-5 col-xxl-6 d-none d-xl-block ">
+          <div className="col-md-5 col-xl-4 d-none d-lg-block  ">
             <div classNameName="">
               <div className=" mb-5 box">
                 <div className="card h-100 shadow border-0">

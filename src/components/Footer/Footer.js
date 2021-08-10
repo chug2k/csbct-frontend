@@ -5,7 +5,7 @@ import logo from "./logo.png";
 const Footer = () => {
   return (
     <>
-      <Box>
+      <Box className="bg-lightpink">
         <Container>
           <Row>
             <Column>
