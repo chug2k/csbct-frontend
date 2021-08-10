@@ -1,10 +1,14 @@
 import React from "react";
+import { Button } from "react-bootstrap";
+import { Link } from "react-router-dom";
+
 import "./ReceiverCard.css";
 import { Card, CardGroup, Col, ProgressBar, Row } from "react-bootstrap";
 
 const ReceiverCard = ({
-  imgURL,
-  name,
+  _id,
+  media,
+  receiver,
   location,
   need,
   requestingFor,
@@ -23,7 +27,7 @@ const ReceiverCard = ({
             >
               <Card.Img
                 variant="top"
-                src={imgURL}
+                src={media}
                 style={{
                   width: "100%",
                   height: "10rem",
@@ -38,10 +42,10 @@ const ReceiverCard = ({
                 <Card.Text>
                   <div>
                     <p>Location: {location}</p>
-                    <p>{name}</p>
-                    <a href="" style={{ color: "grey" }}>
+                    <p>{receiver && receiver.name}</p>
+                    <Link to={`/requests/${_id}`} style={{ color: "grey" }}>
                       Read more
-                    </a>
+                    </Link>
                   </div>
                 </Card.Text>
               </Card.Body>
