@@ -7,7 +7,6 @@ import Imgupload from "../../components/Imgupload/Imgupload";
 function BankTransfer() {
   return (
     <div>
-      <Header />
       <ToastSoS />
       <ReceiverBankAccount />
     </div>

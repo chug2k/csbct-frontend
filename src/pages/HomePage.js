@@ -21,7 +21,6 @@ const HomePage = () => {
   console.log("donat", donationRequests);
   return (
     <div>
-      <Header />
       {/* <Carousel2 /> */}
       <Introduction />
       <br />

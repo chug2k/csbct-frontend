@@ -41,6 +41,10 @@ console.log("request", request)
         alert('Please make sure your input is valid.')
     }
   };
+
+  const handleCancel = () => {
+      setOpen(false)
+  }
   
 
   const handleMoneyInput = (e) => {
@@ -119,7 +123,7 @@ console.log("request", request)
 
         </DialogContent>
         <DialogActions>
-          <Button onClick={handleClose} color="primary">
+          <Button onClick={handleCancel} color="primary">
             Cancel
           </Button>
           <Button onClick={handleClose} color="primary">

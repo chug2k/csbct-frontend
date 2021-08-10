@@ -10,15 +10,19 @@ import DetailPage from "./pages/DetailPage";
 import BankTransfer from "./pages/BankTransfer/BankTranfer";
 import LogInPage from "./pages/LogInPage";
 import SignUpPage from "./pages/SignUp/SignUpPage";
+import RequestPage from "./pages/RequestPage";
+import Header from "./components/Header/Header";
 
 function App() {
   return (
     <div className="App">
       <Router>
+        <Header />
         <Switch>
           <Route exact path="/" component={HomePage} />
           <Route exact path="/login" component={LogInPage} />
           <Route exact path="/signup" component={SignUpPage} />
+          <Route exact path="/requests" component={RequestPage} />
           <Route exact path="/requests/:id" component={DetailPage} />
           <Route exact path="/Banktransfer" component={BankTransfer} />
         </Switch>
