@@ -143,6 +143,7 @@ function ReceiverBankAccount() {
             the receiver account
           </div>
           <div className="verificationButtons">
+            <Imgupload className="rightButton" />
             <Button
               variant=""
               className="btn-primary-t leftButton"
@@ -150,9 +151,6 @@ function ReceiverBankAccount() {
             >
               Transferred
             </Button>{" "}
-            <div>
-              <Imgupload className="rightButton" />
-            </div>
           </div>
         </Col>
       </Row>

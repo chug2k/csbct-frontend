@@ -27,6 +27,9 @@ const Imgupload = () => {
         Upload files
       </button>
       <img
+        height="300px"
+        width="300px"
+        className="veripic"
         src={imageURL}
         alt="picture"
         style={imageURL ? { display: "block" } : { display: "none" }}
