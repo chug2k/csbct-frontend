@@ -1,6 +1,6 @@
 import React from "react";
 import "./ReceiverCard.css";
-import { Card, CardGroup, Col, Row } from "react-bootstrap";
+import { Card, CardGroup, Col, ProgressBar, Row } from "react-bootstrap";
 
 const ReceiverCard = ({
   imgURL,
@@ -13,19 +13,20 @@ const ReceiverCard = ({
   return (
     <>
       <CardGroup>
-        <Row className="card-space">
+        <Row className="card-space ">
           <Col xs={12} md={3} lg={4}>
             <Card
               style={{
                 width: "16rem",
+                marginBottom: "20px",
               }}
             >
               <Card.Img
                 variant="top"
                 src={imgURL}
                 style={{
-                  width: "16rem",
-                  height: "45vh",
+                  width: "100%",
+                  height: "10rem",
                   backgroundPosition: "center",
                 }}
               />
@@ -44,6 +45,7 @@ const ReceiverCard = ({
                   </div>
                 </Card.Text>
               </Card.Body>
+              <ProgressBar variant="success" now={40} />
             </Card>
           </Col>
         </Row>

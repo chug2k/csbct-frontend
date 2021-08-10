@@ -14,10 +14,15 @@ const HomePage = () => {
     <div>
       <Header />
       <Carousel2 />
-      {/* <Introduction /> */}
+      <Introduction />
       <br />
-      <ReceiversCarousel items={receiver} />
+      <center>
+        <ReceiversCarousel items={receiver} />
+      </center>
       <Story />
+      <center>
+        <ReceiversCarousel items={receiver} />
+      </center>
       <Footer />
     </div>
   );

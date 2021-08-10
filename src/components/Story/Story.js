@@ -5,7 +5,7 @@ import "./Story.css";
 const Story = () => {
   return (
     <Container>
-      <div class="py-5 bg-lightpink" id="scroll-target">
+      <div class="py-5 " id="scroll-target">
         <h2 class="fw-bolder" style={{ color: "grey", paddingLeft: "2vw" }}>
           Success Stories{" "}
         </h2>
