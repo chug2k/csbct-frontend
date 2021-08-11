@@ -14,22 +14,21 @@ import { useDispatch, useSelector } from "react-redux";
 
 const HomePage = () => {
   const dispatch = useDispatch();
-  useEffect(() => dispatch(getDonationRequests()), []);
+  useEffect(() => dispatch(getDonationRequests(20)), []);
   const donationRequests = useSelector(
     (state) => state.requests.donationRequests
   );
-  console.log("donat", donationRequests);
   return (
     <div>
       {/* <Carousel2 /> */}
       <Introduction />
       <br />
       <center>
-        <ReceiversCarousel items={donationRequests || []} />
+        <ReceiversCarousel items={donationRequests.slice(0, 10) || []} />
       </center>
       <Story />
       <center>
-        <ReceiversCarousel items={donationRequests || []} />
+        <ReceiversCarousel items={donationRequests.slice(10, 20) || []} />
       </center>
       <Footer />
     </div>

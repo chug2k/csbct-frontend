@@ -4,10 +4,12 @@ import {
   FETCH_DRALL_SUCCESS,
 } from "./DonationRequestsType";
 
-const getDonationRequests = () => async (dispatch) => {
+const getDonationRequests = (limit) => async (dispatch) => {
   dispatch({ type: FETCH_DRALL_START, payload: null });
   try {
-    const res = await fetch(`http://localhost:5000/donation_requests`);
+    const res = await fetch(
+      `http://localhost:5000/donation_requests?limit=${limit}`
+    );
     const json = await res.json();
     console.log(json);
     dispatch({
