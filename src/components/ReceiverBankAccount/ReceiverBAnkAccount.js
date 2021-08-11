@@ -9,11 +9,14 @@ import {
   InputGroup,
   Row,
 } from "react-bootstrap";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { toastFail, toastSuccess } from "../../redux/Toast/ToastAction";
 import "./Style.css";
 import NumberFormat from "react-number-format";
 import Imgupload from "../Imgupload/Imgupload";
+import { useParams } from "react-router-dom";
+
+import { getDonationRequest } from "../../redux/DonationRequest/DonationRequestAction";
 
 function ReceiverBankAccount() {
   const dispatch = useDispatch();
@@ -24,6 +27,13 @@ function ReceiverBankAccount() {
     Message: "",
     anonymousMode: "",
   });
+  const { id } = useParams();
+
+  // none of this should be here
+  useEffect(() => dispatch(getDonationRequest(id)), []);
+  const { media, need, amount_remaining, receiver, details, createdAt } =
+    useSelector((state) => state.requestDetail.donationRequest);
+
   let a;
   const handleOnclick = (e) => {
     e.preventDefault();
@@ -45,19 +55,17 @@ function ReceiverBankAccount() {
                   <Card.Img
                     variant="top"
                     style={{ height: "45vh" }}
-                    src=" https://images.unsplash.com/photo-1531427186611-ecfd6d936c79?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=634&q=80"
+                    src={media}
                   />
                 </Col>
                 <Col xs={12} md={8}>
                   <h5 style={{ color: "grey" }} className="padding2vw">
-                    You're supporting donation will benefit to The Receiver
+                    Your supporting donation will benefit
+                    {receiver && receiver.name}
                   </h5>
-                  <div style={{ color: "grey" }}>
-                    Your donation will send to Tram
-                  </div>
-                  <div>Name: Le Ngoc Tram</div>
+                  <p> {details} </p>
                   <div>Bank : ACB</div>
-                  <dic>Bank Account: 163287498054</dic>
+                  <dic>Bank Account: 163287498xxx</dic>
                 </Col>
               </Row>
             </Card>

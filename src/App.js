@@ -24,7 +24,7 @@ function App() {
           <Route exact path="/signup" component={SignUpPage} />
           <Route exact path="/requests" component={RequestPage} />
           <Route exact path="/requests/:id" component={DetailPage} />
-          <Route exact path="/Banktransfer" component={BankTransfer} />
+          <Route exact path="/donate/:id" component={BankTransfer} />
         </Switch>
       </Router>
     </div>

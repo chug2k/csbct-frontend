@@ -1,7 +1,7 @@
 import React, { useEffect } from "react";
 import Footer from "../components/Footer/Footer";
 import Header from "../components/Header/Header";
-import { useParams } from "react-router-dom";
+import { useParams, Link } from "react-router-dom";
 import { Container, Row, Col, Button } from "react-bootstrap";
 import { useDispatch, useSelector } from "react-redux";
 
@@ -16,7 +16,6 @@ const DetailPage = () => {
 
   return (
     <div>
-      <Header />
       <Container>
         {/* First header */}
         <Row>
@@ -29,7 +28,14 @@ const DetailPage = () => {
             </Row>
             <Row>
               <Col>
-                <img src={media} />
+                <img
+                  src={media}
+                  style={{
+                    maxWidth: "100%",
+                    maxHeight: "400px",
+                    objectFit: "cover",
+                  }}
+                />
               </Col>
             </Row>
           </Col>
@@ -43,7 +49,9 @@ const DetailPage = () => {
             </Row>
             <Row>
               <Col>
-                <Button>Do it</Button>
+                <Link to={`/donate/${id}`}>
+                  <Button>Make a Donation</Button>
+                </Link>
               </Col>
             </Row>
           </Col>
